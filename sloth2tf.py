@@ -51,7 +51,7 @@ def remove_transparency(im, bg_colour=(255, 255, 255)):
     else:
         return im
 
-def resize_image(filename, max_size=600):
+def resize_image(filename, max_size=1500):
     """
     Resize if any dimension over a certain amount. This is used because without
     it I'm CPU bound trying to do all the data augmentation to huge images.
@@ -118,7 +118,7 @@ def create_tf_example(labels, filename, annotations, debug=False):
     encoded_image_data = loadImage(filename) # Encoded image bytes
 
     if debug:
-        print(filename, str(width)+"x"+str(height), imgformat)
+        print(filename, str(new_width)+"x"+str(new_height), imgformat)
 
     if imgformat == 'PNG':
         image_format = b'png' # b'jpeg' or b'png'

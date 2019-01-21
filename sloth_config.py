@@ -36,12 +36,12 @@
 LABELS = (
     {
         'attributes': {
-            'class': 'fryingpan',
+            'class': 'laptop',
         },
         'inserter': 'sloth.items.RectItemInserter',
         'item':     'sloth.items.RectItem',
         'hotkey':   'f',
-        'text':     'Frying Pan',
+        'text':     'Laptop',
     },
 )
 
