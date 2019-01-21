@@ -13,7 +13,7 @@ from PIL import Image
 import tensorflow as tf
 from models.research.object_detection.utils import dataset_util
 
-from sloth_common import getJson, uniqueClasses, predefinedClasses, \
+from sloth_common import getJson, uniqueClasses, \
     imgInfo, mapLabel, splitData
 
 # Make this repeatable
@@ -211,7 +211,6 @@ def main(_):
     folder = "."
     data = getJson(os.path.join(folder, "sloth.json"))
     labels = uniqueClasses(data)
-    #labels = predefinedClasses()
 
     # Save labels
     tfLabels(labels, os.path.join(folder, "tf_label_map.pbtxt"))
