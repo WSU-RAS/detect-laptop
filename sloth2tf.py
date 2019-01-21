@@ -51,7 +51,7 @@ def remove_transparency(im, bg_colour=(255, 255, 255)):
     else:
         return im
 
-def resize_image(filename, max_size=1500):
+def resize_image(filename, max_size=600):
     """
     Resize if any dimension over a certain amount. This is used because without
     it I'm CPU bound trying to do all the data augmentation to huge images.
