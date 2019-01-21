@@ -5,6 +5,6 @@
 # From: http://sloth.readthedocs.io/en/latest/examples.html
 out="sloth.json"
 [[ ! -e "$out" ]] && \
-    find *_images/ -type f -print0 | \
+    find images/ -type f -print0 | \
     sort -z | \
     xargs -0 sloth appendfiles "$out"
