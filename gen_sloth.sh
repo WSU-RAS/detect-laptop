@@ -1,10 +1,10 @@
 #!/bin/bash
 #
-# Generate Sloth file for labeling from *_images/*
+# Generate Sloth file for labeling images*/*
 #
 # From: http://sloth.readthedocs.io/en/latest/examples.html
 out="sloth.json"
 [[ ! -e "$out" ]] && \
-    find images/ -type f -print0 | \
+    find images*/ -type f -print0 | \
     sort -z | \
     xargs -0 sloth appendfiles "$out"

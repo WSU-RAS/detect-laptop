@@ -169,7 +169,7 @@ def create_tf_example(labels, filename, annotations, debug=False):
     }))
     return tf_example
 
-def splitJsonData(data, trainPercent=0.8, validPercent=0.2, shuffle=True):
+def splitJsonData(data, trainPercent=0.8, validPercent=0.2, shuffle=True, skipNegative=False):
     """
     Split the JSON data so we can get a training, validation, and testing file
 
@@ -178,9 +178,10 @@ def splitJsonData(data, trainPercent=0.8, validPercent=0.2, shuffle=True):
     results = []
 
     for image in data:
-        # Skip if we don't have any labels for this image
-        if not len(image['annotations']) > 0:
-            continue
+        if skipNegative:
+            # Skip if we don't have any labels for this image
+            if not len(image['annotations']) > 0:
+                continue
 
         results.append((image['filename'], image['annotations']))
 
